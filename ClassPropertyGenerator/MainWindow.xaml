@@ -1,0 +1,24 @@
+﻿<Window x:Class="ClassPropertyGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClassPropertyGenerator"
+        mc:Ignorable="d"
+        Title="CodeGenerator" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="InputBox" Margin="10,10,5,35" Text="TextBox" AcceptsReturn="True"/>
+        <TextBox x:Name="OutputBox" Margin="5,10,10,35" Text="TextBox" VerticalScrollBarVisibility="Auto" Grid.Column="1"/>
+        <Button Content="Button" Margin="0,0,10,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="Button_Click" Grid.Column="1"/>
+        <ComboBox x:Name="TypeBox" HorizontalAlignment="Right" Margin="0,0,90,8" Width="120" Height="22" VerticalAlignment="Bottom" SelectedIndex="0" Grid.Column="1">
+            <ComboBoxItem Content="声明变量"/>
+            <ComboBoxItem Content="声明Command"/>
+            <ComboBoxItem Content="Xaml"/>
+            <ComboBoxItem Content="Html" />
+        </ComboBox>
+    </Grid>
+</Window>
