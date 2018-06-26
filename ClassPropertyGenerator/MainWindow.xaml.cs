@@ -253,7 +253,7 @@ namespace ClassPropertyGenerator
                     string indexname = name.Substring(0, name.Length - 4);
                     if (dic.ContainsKey(indexname))
                     {
-                        el_form_item += "<el-form-item label=\"" + indexname + "\" prop=\"" + 首字母小写(indexname) + "\">" + Environment.NewLine;
+                        el_form_item += "<el-form-item label=\"" + indexname + "\" prop=\"" + indexname + "\">" + Environment.NewLine;
                         el_form_item += "<el-select placeholder=\"请选择\" v-model=\"" + ObjectName + "." + indexname + "\">" + Environment.NewLine;
                         el_form_item += "<el-option v-for=\"item in " + 首字母小写(name) + "\" :key=\"item\" :value=\"item\"></el-option>" + Environment.NewLine;
                         el_form_item += "</el-select>" + Environment.NewLine;
@@ -267,7 +267,7 @@ namespace ClassPropertyGenerator
                 else if (dic.ContainsKey(name + "Enum"))
                 {
                     string enumname = name + "Enum";
-                    el_form_item += "<el-form-item label=\"" + name + "\" prop=\"" + 首字母小写(name) + "\">" + Environment.NewLine;
+                    el_form_item += "<el-form-item label=\"" + name + "\" prop=\"" + name + "\">" + Environment.NewLine;
                     el_form_item += "<el-select placeholder=\"请选择\" v-model=\"" + ObjectName + "." + name + "\">" + Environment.NewLine;
                     el_form_item += "<el-option v-for=\"item in " + 首字母小写(enumname) + "\" :key=\"item\" :value=\"item\"></el-option>" + Environment.NewLine;
                     el_form_item += "</el-select>" + Environment.NewLine;
@@ -279,7 +279,7 @@ namespace ClassPropertyGenerator
                 }
                 else if (type.Equals("string"))
                 {
-                    el_form_item += "<el-form-item label=\"" + name + "\" prop=\"" + 首字母小写(name) + "\">" + Environment.NewLine;
+                    el_form_item += "<el-form-item label=\"" + name + "\" prop=\"" + name + "\">" + Environment.NewLine;
                     el_form_item += "<el-input v-model=\"" + ObjectName + "." + name + "\"></el-input>" + Environment.NewLine;
                     el_form_item += "</el-form-item>" + Environment.NewLine;
 
@@ -287,7 +287,7 @@ namespace ClassPropertyGenerator
                 }
                 else if (type.Equals("bool"))
                 {
-                    el_form_item += "<el-form-item label=\"" + name + "\" prop=\"" + 首字母小写(name) + "\">" + Environment.NewLine;
+                    el_form_item += "<el-form-item label=\"" + name + "\" prop=\"" + name + "\">" + Environment.NewLine;
                     el_form_item += "<el-switch v-model=\"" + ObjectName + "." + name + "\"></el-switch>" + Environment.NewLine;
                     el_form_item += "</el-form-item>" + Environment.NewLine;
 
@@ -295,7 +295,7 @@ namespace ClassPropertyGenerator
                 }
                 else if (type.Equals("DateTime"))
                 {
-                    el_form_item += "<el-form-item label=\"" + name + "\" prop=\"" + 首字母小写(name) + "\">" + Environment.NewLine;
+                    el_form_item += "<el-form-item label=\"" + name + "\" prop=\"" + name + "\">" + Environment.NewLine;
                     el_form_item += "<el-date-picker type=\"datetime\" v-model=\"" + ObjectName + "." + name + "\" placeholder=\"选择日期时间\" value-format=\"yyyy-MM-ddTHH:mm\"></el-date-picker>" + Environment.NewLine;
                     el_form_item += "</el-form-item>" + Environment.NewLine;
 
@@ -304,7 +304,7 @@ namespace ClassPropertyGenerator
                 else if (type.StartsWith("List<"))
                 {
                     string itemtype = type.Substring(5, type.Length - 6);
-                    el_form_item += "<el-form-item label=\"" + name + "\" prop=\"" + 首字母小写(name) + "\">" + Environment.NewLine;
+                    el_form_item += "<el-form-item label=\"" + name + "\" prop=\"" + name + "\">" + Environment.NewLine;
                     el_form_item += "<EditableTable :tableData=\"" + ObjectName + "." + name + "\" :rowModel=\"" + 首字母小写(itemtype) + "\"></EditableTable>" + Environment.NewLine;
                     el_form_item += "</el-form-item>" + Environment.NewLine;
 
